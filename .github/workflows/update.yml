@@ -1,0 +1,19 @@
+name: Update mortgage rate
+on:
+  schedule:
+    - cron: "0 17 * * 4"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 update.py
+      - run: |
+          if [ -n "$(git status --porcelain rate.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add rate.json && git commit -m "Update rate.json" && git push
+          else echo "no change"; fi
