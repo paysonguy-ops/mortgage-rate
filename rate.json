@@ -1,1 +1,6 @@
-{"rate":7.40,"asOf":"2026-10-08","source":"Freddie Mac PMMS via FRED (MORTGAGE30US)","updated":"2026-10-14T00:00:00Z"}
+{
+ "rate": 7.4,
+ "asOf": "2026-10-15",
+ "source": "Freddie Mac PMMS via FRED (MORTGAGE30US)",
+ "updated": "2026-10-15T20:10:40Z"
+}
